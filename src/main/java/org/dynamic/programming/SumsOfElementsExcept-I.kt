@@ -1,4 +1,4 @@
-package org.datastructures
+package org.dynamic.programming
 
 /*
 * Problem proposed

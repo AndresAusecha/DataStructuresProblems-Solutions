@@ -1,8 +1,6 @@
 package org.main
 
-import org.datastructures.calculateTheSumExceptI
-import org.datastructures.getIndicesOfAdditionToTarget
-import org.datastructures.getIndicesOfAdditionToTargetAlt
+import org.dynamic.programming.calculateTheSumExceptI
 
 fun main() {
     /*
