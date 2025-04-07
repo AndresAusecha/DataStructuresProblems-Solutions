@@ -1,7 +1,6 @@
 package org.main
 
-import org.dynamic.programming.calculateTheSumExceptI
-import org.dynamic.programming.findTheMaximumSubArray
+import org.dynamic.programming.maxProductOfSubArray
 
 fun main() {
     /*
@@ -25,7 +24,10 @@ fun main() {
         println("element: $element")
     }
      */
+    /*
     findTheMaximumSubArray(arrayOf(-2, 1, -3, 4, -1, 2, 1, -5, 4)).forEach { el ->
         println("subarray element: $el")
     }
+    */
+    println(maxProductOfSubArray(arrayOf(-2, 1, 5, -6, -5, 12, 1, 0, 15)))
 }
