@@ -1,9 +1,6 @@
 package org.main
 
-import org.dynamic.programming.findTargetByBinarySearch
-import org.dynamic.programming.findTargetIndex
-import org.dynamic.programming.findTheMinInRotatedArray
-import org.dynamic.programming.maxProductOfSubArray
+import org.dynamic.programming.*
 
 fun main() {
     /*
@@ -36,5 +33,9 @@ fun main() {
 
     //println("the in index of the target is: ${findTargetIndex(arrayOf(1, 2, 3, 4, 5, 6, 7), 4)}")
 
-    println("minimum: ${findTheMinInRotatedArray(arrayOf(3, 4, 5, 1, 2))}")
+    //println("minimum: ${findTheMinInRotatedArray(arrayOf(3, 4, 5, 1, 2))}")
+
+    //println(findWordsInDictionary("leetcode", arrayOf("leet", "code")))
+
+    println(findWordsInDictionary("leetcode", arrayOf("leet")))
 }
