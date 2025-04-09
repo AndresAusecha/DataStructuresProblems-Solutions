@@ -37,5 +37,7 @@ fun main() {
 
     //println(findWordsInDictionary("leetcode", arrayOf("leet", "code")))
 
-    println(findWordsInDictionary("leetcode", arrayOf("leet")))
+    //println(findWordsInDictionary("leetcode", arrayOf("leet")))
+
+    quickSort(arrayOf(3, 5, 8, 7, 4, 6, 1, 2, 9)).forEach { i -> "element ${println(i)}" }
 }
