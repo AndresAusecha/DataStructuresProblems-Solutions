@@ -8,8 +8,6 @@ fun findTargetIndex(numbers: Array<Int>, target: Int): Int {
 }
 
 fun findTargetByBinarySearch(numbers: Array<Int>, target: Int, startInd: Int, endInd: Int): Int {
-
-
     val middle = (startInd + endInd) / 2
 
     if (numbers[middle] == target) {
