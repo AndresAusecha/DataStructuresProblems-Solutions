@@ -1,9 +1,6 @@
 package org.main
 
-import org.datastructures.generateBinaryTrees
-import org.datastructures.generateBinaryTrees2
-import org.datastructures.validateHeightBalance
-import org.datastructures.validateTheBinaryTree
+import org.datastructures.*
 import org.dynamic.programming.*
 
 fun main() {
@@ -45,8 +42,13 @@ fun main() {
 
     //quickSort(arrayOf(3, 5, 8, 7, 4, 6, 1, 2, 9)).forEach { i -> "element ${println(i)}" }
 
-    val tree = generateBinaryTrees2()
+    val (_, unbalancedTree) = generateBinaryTrees2()
 
-    println("is height-balanced ${validateHeightBalance(tree.first)}")
-    println("is height-balanced ${validateHeightBalance(tree.second)}")
+    //println("is height-balanced ${validateHeightBalance(tree.first)}")
+    //println("is height-balanced ${validateHeightBalance(tree.second)}")
+
+    println("is tree balanced: ${validateTheBinaryTree(unbalancedTree)}")
+    println("is tree balanced: ${validateTheBinaryTree(balanceBinaryTree(unbalancedTree))}")
+
+
 }

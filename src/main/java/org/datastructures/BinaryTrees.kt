@@ -1,6 +1,7 @@
 package org.datastructures
 
 import kotlin.math.abs
+import org.dynamic.programming.quickSort
 
 class TreeNode(val value: Int){
     var leftNode: TreeNode? = null
@@ -27,6 +28,44 @@ fun validateHeightBalanceRecursive(tree: TreeNode?): Int {
         return 0
     }
     return 1 + validateHeightBalanceRecursive(tree.leftNode) + validateHeightBalanceRecursive(tree.rightNode)
+}
+
+fun getTreeLeaves(node: TreeNode?): List<Int> {
+   if (node == null) {
+       return emptyList()
+   }
+
+    return listOf(node.value).plus(getTreeLeaves(node.leftNode)).plus(getTreeLeaves(node.rightNode))
+}
+
+fun balanceBinaryTree(tree: TreeNode): TreeNode? {
+    val listOfLeaves = getTreeLeaves(tree)
+    val sortedLeaves = quickSort(listOfLeaves)
+
+    return buildBinarySearchTree(sortedLeaves)
+}
+
+fun buildBinarySearchTree(leaves: List<Int>): TreeNode? {
+    if (leaves.isEmpty()){
+        return null
+    }
+    val rootIndex = leaves.indices.last / 2
+    val root = TreeNode(leaves[rootIndex])
+
+    if (leaves.size == 1) {
+        return root
+    }
+
+    if (leaves.size == 2) {
+        return TreeNode(leaves[1]).apply {
+            leftNode = TreeNode(leaves[0])
+        }
+    }
+
+    return root.apply {
+        root.leftNode = buildBinarySearchTree(leaves.subList(0, rootIndex ))
+        root.rightNode = buildBinarySearchTree(leaves.subList(rootIndex + 1, leaves.indices.last + 1))
+    }
 }
 
 fun generateBinaryTrees(): Pair<TreeNode, TreeNode> {
@@ -63,15 +102,15 @@ fun generateBinaryTrees(): Pair<TreeNode, TreeNode> {
 }
 
 fun generateBinaryTrees2(): Pair<TreeNode, TreeNode> {
-    val heightUnbalancedTree = TreeNode(0)
-    val heightUnbalancedTree1 = TreeNode(1)
-    val heightUnbalancedTree2 = TreeNode(2)
+    val heightUnbalancedTree = TreeNode(8)
+    val heightUnbalancedTree1 = TreeNode(9)
+    val heightUnbalancedTree2 = TreeNode(6)
 
-    val heightUnbalancedTree21 = TreeNode(3)
-    val heightUnbalancedTree22 = TreeNode(4)
+    val heightUnbalancedTree21 = TreeNode(1)
+    val heightUnbalancedTree22 = TreeNode(2)
 
-    val heightUnbalancedTree221 = TreeNode(5)
-    val heightUnbalancedTree222 = TreeNode(6)
+    val heightUnbalancedTree221 = TreeNode(3)
+    val heightUnbalancedTree222 = TreeNode(7)
 
     heightUnbalancedTree22.leftNode = heightUnbalancedTree221
     heightUnbalancedTree22.rightNode = heightUnbalancedTree222
