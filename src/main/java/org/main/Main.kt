@@ -42,13 +42,29 @@ fun main() {
 
     //quickSort(arrayOf(3, 5, 8, 7, 4, 6, 1, 2, 9)).forEach { i -> "element ${println(i)}" }
 
-    val (_, unbalancedTree) = generateBinaryTrees2()
+    //val (_, unbalancedTree) = generateBinaryTrees2()
 
     //println("is height-balanced ${validateHeightBalance(tree.first)}")
     //println("is height-balanced ${validateHeightBalance(tree.second)}")
 
-    println("is tree balanced: ${validateTheBinaryTree(unbalancedTree)}")
-    println("is tree balanced: ${validateTheBinaryTree(balanceBinaryTree(unbalancedTree))}")
+    //println("is tree balanced: ${validateTheBinaryTree(unbalancedTree)}")
+    //println("is tree balanced: ${validateTheBinaryTree(balanceBinaryTree(unbalancedTree))}")
 
+    val matrix = MatrixHashMap(3, 4)
+
+    matrix.setValue(0, 0, "a")
+    matrix.setValue(0, 1, "b")
+    matrix.setValue(0, 2, "c")
+    matrix.setValue(0, 3, "e")
+    matrix.setValue(1, 0, "s")
+    matrix.setValue(1, 1, "f")
+    matrix.setValue(1, 2, "c")
+    matrix.setValue(1, 3, "s")
+    matrix.setValue(2, 0, "a")
+    matrix.setValue(2, 1, "d")
+    matrix.setValue(2, 2, "e")
+    matrix.setValue(2, 3, "e")
+
+    print("this is the result: ${matrix.searchWord("abcced")}")
 
 }
